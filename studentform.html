@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-color: wheat;
+            }
+            ul{
+                background-color: black;
+                color: white;
+                width: 70%;
+            }
+            /* li
+            {
+                margin: 5px;
+                padding: 5px;
+                text-align:center;
+                width: 70%;
+            } */
+            input
+            {
+                margin: 2px;
+            }
+            table,td
+            {
+                width: 50%;
+                height: 50%;
+                border: 2px solid green;
+                border-style: solid;
+                border-style: double;
+                background-color:black;
+                color: white;
+                border-collapse: collapse;
+            }
+            li:hover
+            {
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Student Form</h1>
+        <hr>
+        <table>
+            <tr>
+                   <td>Name:</td>
+                    <td><input  id="name" type="text"></td>
+                   </tr>
+                   <tr>
+                    <td>Age:</td>
+                    <td><input id="age" type="text"></td>
+                    </tr>
+                    <tr>
+                    <td>Gender:</td>
+                    <td><input id="gender" type="text"></td> 
+                    </tr>
+                    <tr>
+                    <td>Course:</td>
+                    <td><input id="course" type="text"></td> 
+                    </tr>
+                    <tr>
+                    <td>Email:</td>
+                    <td><input id="email" type="text"></td>
+                </tr>
+            <tr>
+                <td style="border: none;">
+                <button onclick="addFormValue()" style="width: 50px;text-align: center;margin-left: 50%;width: 100px;">Save</button>
+            </td>
+            </tr>
+                
+        </table>
+        <br>
+        <table id="table">
+            <tr>
+<td>Name</td>
+<td>Age</td>
+<td>Gender</td>
+<td>Course</td>
+<td>Email</td>
+<td>Delete</td>
+            </tr>
+        </table>
+        <script>
+            function addFormValue()
+            {
+var tableElement=document.createElement("tr")
+tableElement.innerHTML="<td>"+document.getElementById("name").value+"</td>"+
+"<td>"+document.getElementById("age").value+"</td>"+
+"<td>"+document.getElementById("gender").value+"</td>"+
+"<td>"+document.getElementById("course").value+"</td>"+
+"<td>"+document.getElementById("email").value+"</td>"+"<td>"+"<button onclick='deleteFormValue(event)'>Delete</button>"+"</td>"
+var table=document.getElementById("table")
+table.append(tableElement)
+            }
+            function deleteFormValue(event)
+            {
+                event.target.parentElement.remove()
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var score=0;
+    var lifeLine=3;
+    function print()
+     {
+    var value=Number(document.getElementById("entered").value)
+    
+    var random=Math.floor(Math.random()*10)+1
+    if(value==random)
+    {
+    score=score+1
+    document.getElementById("result").textContent="Congrts your winner..!!!"
+    document.getElementById("health").textContent="Health : "+lifeLine
+    document.getElementById("score").textContent="Score   : "+score
+    }
+    else
+    {
+        score=score-1
+        lifeLine=lifeLine-1
+        document.getElementById("result").textContent="better luck next time birooo..."
+        document.getElementById("health").textContent="Health : "+lifeLine
+        document.getElementById("score").textContent="Score   : "+score
+    }
+    if(lifeLine==0)
+    {
+        alert("Game Over!!!!!!!!!! : Score :"+ score)
+        score=0;
+        lifeLine=0;
+        document.getElementById("health").textContent="Health : "+lifeLine
+        document.getElementById("score").textContent="Score   : "+score
+        
+    }
+    }
+    </script>
+</head>
+<body>
+    <!-- <h1 id="h1">Hello World!!!</h1>
+    Enter a value for No1: <input type="number" id="no1" /><br>
+    Enter a value for No2: <input type="number" id="no2" /><br>
+    <button onclick="add()">Click for the result</button><br><br>
+   <input type="number" name="" id="result" disabled>
+</body>
+<script>
+    // document.getElementById("h1").textContent="Hi Narayanasamy How are you ?"
+    function add()
+    {
+        var a=document.getElementById("no1").value;
+        var b=document.getElementById("no2").value;
+        var result=Number(a)+Number(b);
+        console.log(a+" "+b+" "+result)
+        document.getElementById("result").value=result;
+    } -->
+
+    <input type="number" name="" id="entered"><br><br>
+    <button onclick="print()">check</button> <br>
+    <h1 id="result">click the check button for result!!</h1><br>
+    <h6 id="health">Health</h6><br>
+    <h6 id="score">Score</h6>
+</body>
+</html>
