@@ -1,0 +1,27 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Todo List App</h1>
+        <input id="input" type="text">
+        <button onclick="addItem()">Add To List</button>
+        <br>
+        <ul id="list">
+            <li>First Item
+            <button onclick="removeItem(event)">Delete</button>
+            </li>
+        </ul>
+        <script>
+function addItem()
+{
+    var createElement=document.createElement("li")
+    createElement.innerHTML=document.getElementById("input").value+"<button onclick='removeItem(event)'>Delete</button>"
+        document.getElementById("list").append(createElement)
+}
+function removeItem(event)
+{
+    event.target.parentElement.remove()
+}
+        </script>
+    </body>
+</html>
